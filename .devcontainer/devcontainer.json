@@ -1,5 +1,20 @@
 {
   "name": "Python 3.10",
   "image": "mcr.microsoft.com/vscode/devcontainers/python:3.10",
-  "postCreateCommand": "git config --global credential.helper store"
+  "postCreateCommand": "git config --global credential.helper store",
+  "postCreateCommand": "bash .devcontainer/postCreate.sh",
+  "features": {
+    "ghcr.io/devcontainers/features/github-cli:1": {
+      "installDirectlyFromGitHubRelease": true,
+      "version": "latest"
+    }
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-python.debugpy",
+        "ms-python.python"
+      ]
+    }
+  }
 }
